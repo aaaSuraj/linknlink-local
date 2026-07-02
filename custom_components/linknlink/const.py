@@ -6,6 +6,13 @@ DOMAIN = "linknlink"
 PLATFORM_INFRARED = "infrared"
 PLATFORM_RADIO_FREQUENCY = "radio_frequency"
 
+# Config subentries: appliances controlled through the hub via IR/RF.
+SUBENTRY_TYPE_DEVICE = "controlled_device"
+CONF_COMMAND_TYPE = "command_type"
+CONF_COMMANDS = "commands"
+COMMAND_TYPE_IR = "ir"
+COMMAND_TYPE_RF = "rf"
+
 DOMAINS_AND_TYPES: dict[str, set[str]] = {
     # Platform.REMOTE: {"EHUB", "EREMOTE"},
     # Platform.SENSOR: {"EHUB", "ETHS", "EREMOTE"},
@@ -14,6 +21,7 @@ DOMAINS_AND_TYPES: dict[str, set[str]] = {
     Platform.REMOTE: {"EHUB", "EREMOTE"},
     Platform.SENSOR: {"EHUB", "ETHS"},
     Platform.BINARY_SENSOR: {"EHUB", "EMOTION"},
+    Platform.BUTTON: {"EHUB", "EREMOTE"},
     PLATFORM_INFRARED: {"EHUB", "EREMOTE"},
     PLATFORM_RADIO_FREQUENCY: {"EHUB", "EREMOTE"},
 }
